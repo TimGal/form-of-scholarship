@@ -1,0 +1,61 @@
+.container {
+	
+}
+
+@media only screen and (max-width: 992px) {
+  .modal {
+    width: 100%;
+  }
+}
+
+#form-reg-stip {
+	padding: 20px;
+	margin-top: 100px;	
+/*background-color: #f0f0f0;*/
+	box-shadow: 3px 3px 40px rgba(0,0,0,0.1);
+}
+
+@font-face {
+	font-family: Roboto-Thin; /* Имя шрифта */
+	src: url(fonts/roboto/Roboto-Thin.woff); /* Путь к файлу со шрифтом */
+}
+
+@font-face {
+	font-family: Roboto-Light; /* Имя шрифта */
+	src: url(fonts/roboto/Roboto-Light.woff); /* Путь к файлу со шрифтом */
+}
+
+#form-header {
+	overflow: hidden;
+	font-family: Roboto Light; 
+}
+
+#nextbutton {
+	float: right;
+	margin-top: 10px;
+}
+
+#send {
+	float: right;
+	margin-top: 10px;
+	padding-bottom: 10px;
+}
+#form-content-2 > h5 {
+	overflow: hidden;
+	font-family: Roboto Light; 
+	padding: 10px;
+	font-size: 1.14rem;
+}
+
+.modal-content > h4 {
+	overflow: hidden;
+	font-family: Roboto Light; 
+}
+
+.workwrapper {
+/*	border-bottom: 1px solid rgb(128, 128, 128);*/
+}
+.remove {
+	position: relative;
+	float: right;
+}

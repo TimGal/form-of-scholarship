@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!--Import Google Icon Font-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!--Import materialize.css-->
+	<link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+	<link rel="stylesheet" type="text/css" href="css/styles.css" />
+	<!--Let browser know website is optimized for mobile-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+	<div class="container row">
+		<div class="row">
+			<!--Форма регистрации 1этап-->
+			<form id="form-reg-stip" onsubmit="return checkForm()" name="form" class="col s12 m12 l6 offset-l3" method="post">
+				<div class="row">
+					<button class="waves-effect waves-teal btn-flat col s1" id="back" type="button">
+							<i class="material-icons left">arrow_back</i>
+						</button>
+					<div id="form-header">
+						<h5 class="center-align col s11">Регистрация</h5>
+					</div>
+				</div>
+				<!-- Показывается форма 1 -->
+				<div class="row" id="form-content-1">
+					<div class="input-field col s12">
+						<input id="workName" type="text">
+						<label for="workName">Название конкурсной работы</label>
+					</div>
+					<div class="input-field col s12">
+						<input id="researchArea" type="text">
+						<label for="researchArea">Область исследования</label>
+					</div>
+					<div class="input-field col s12">
+						<textarea id="workInfo" class="materialize-textarea"></textarea>
+						<label for="workInfo">Сведения о месте учебы (работы) соискателя:</label>
+					</div>
+					<div class="input-field col s12">
+						<label for="birthday">Дата рождения:</label>
+						<input type="text" class="datepicker" id="birthday">
+					</div>
+					<div class="input-field col s12">
+						<label for="phone">Мобильный (личный) телефон:</label>
+						<input type="tel" id="phone">
+					</div>
+					<div class="input-field col s12">
+						<label for="email">E-mail:</label>
+						<input type="email" id="email" name="email" class="validate">
+					</div>
+					<div class="inputfield col"></div>
+					<p>
+						<input type="checkbox" id="checked" name="agree">
+						<label for="checked">Даю согласие на обработку персональных данных</label>
+					</p>
+					<button class="btn waves-effect waves-light" type="button" name="action" id="nextbutton">
+						<i class="material-icons right">arrow_forward</i>Далее
+				</button>
+				</div>
+
+				<!-- Показывается форма 2 -->
+				<div class="row" id="form-content-2">
+					<h5>Автор проекта</h5>
+					<div class="input-field col s12">
+						<input id="managerFIO" type="text">
+						<label for="managerFIO">Ф.И.О. автора проекта</label>
+					</div>
+					<div class="input-field col s12">
+						<input id="address" type="text">
+						<label for="address">Адрес проживания с индексом</label>
+					</div>
+					<div class="input-field col s12">
+						<input id="managerphone" type="tel">
+						<label for="managerphone">Мобильный телефон</label>
+					</div>
+					<div class="input-field col s12">
+						<input id="manageremail" type="email">
+						<label for="manageremail">Адрес электронной почты</label>
+					</div>
+					<div class="input-field col s12">
+						<input id="siteaddress" type="text">
+						<label for="siteaddress">Адрес персонального сайта (сайта проекта)</label>
+					</div>
+					<div class="input-field col s12">
+						<input id="socialaddress" type="text">
+						<label for="socialaddress">Ссылка на Вконтакте</label>
+					</div>
+					<h5>Проект</h5>
+					<div class="input-field col s12">
+						<input id="projName" type="text">
+						<label for="projName">Название проекта </label>
+					</div>
+					<div class="input-field col s12">
+						<textarea id="projtagline" class="materialize-textarea"></textarea>
+						<label for="projtagline">Слоган проекта</label>
+					</div>
+					<div class="input-field col s12">
+						<textarea id="projstatus" class="materialize-textarea tooltipped" data-position="bottom" data-delay="50" data-tooltip="Идея/поиск инвестиций/действующий бизнес/другое"></textarea>
+						<label for="projstatus">Текущая стадия проекта</label>
+					</div>
+					<div class="input-field col s12">
+						<label for="projactual">Актуальность проекта </label>
+						<textarea class="materialize-textarea tooltipped" data-position="bottom" data-delay="50" data-tooltip="Опишите, какую проблему(ы), вы хотите решить и как она(и) решаются сейчас (не более 2000 знаков)" id="projactual"></textarea>
+					</div>
+					<div class="input-field col s12">
+						<label for="projtarget">Цель проекта</label>
+						<textarea id="projtarget" class="materialize-textarea tooltipped" data-position="bottom" data-delay="50" data-tooltip="Сформулируйте одну цель проекта. Цель должна быть конкретная, измеримая, достижимая, близкая автору и ограничена во времени "></textarea>
+					</div>
+					<div class="input-field col s12">
+						<label for="projgeo">География проекта</label>
+						<textarea type="text" id="projgeo" class="tooltipped materialize-textarea" data-position="bottom" data-delay="50" data-tooltip="1.	Перечислить все населенные пункты (регионы), в которых реализуется проект 2. обоснуйте географию реализации проекта"></textarea>
+					</div>
+					<div class="input-field col s6">
+						<label for="projstart">Дата начала проекта:</label>
+						<input type="text" class="datepicker2" id="projstart">
+					</div>
+					<div class="input-field col s6">
+						<label for="projfinish">Дата окончания:</label>
+						<input type="text" class="datepicker2" id="projfinish">
+					</div>
+					<div class="input-field col s12">
+						<label for="projaudience">Целевая аудитория проекта</label>
+						<textarea id="projaudience" class="materialize-textarea tooltipped" data-position="bottom" data-delay="50" data-tooltip="Опишите ваших целевых потребителей: 1. Пол 2. Возраст 3. Социальное положение 4. Образование 5. Уровень дохода"></textarea>
+					</div>
+					<div class="input-field col s12">
+						<label for="projoffer">Преимущество вашего проекта </label>
+						<textarea id="projoffer" class="materialize-textarea tooltipped" data-position="bottom" data-delay="50" data-tooltip="Опишите простое и понятное преимущество, которое будет ключевым в вашем инновационном предложении для потребителей"></textarea>
+					</div>
+					<div class="input-field col s12">
+						<label for="projproblem">Описание решения проблемы</label>
+						<textarea id="projproblem" class="materialize-textarea tooltipped" data-position="bottom" data-delay="50" data-tooltip="Опишите, каким образом вы планируете решить проблему вашей целевой аудитории с учетом вашего ценностного предложения"></textarea>
+					</div>
+					<!--Таблица-->
+					<!-- Modal Trigger -->
+					<div class="input-field col s12">
+						<a href="#modal1" class="waves-effect waves-light btn modal-trigger col s12 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Нажмите, чтобы заполнить календарный план">Заполнить календарный план</a>
+					</div>
+					<!-- Modal Structure -->
+					<div id="modal1" class="modal modal-fixed-footer">
+						<div class="modal-content">
+							<!-- Заголовок -->
+							<h4>Календарный план реализации проекта</h4>
+							<!-- Контент модуля-->
+							<div id="projtable">
+								<div class="workwrapper row">
+									<div class="input-field col m3 s6">
+										<label for="projstage">Этап реализации</label>
+										<input id="projstage" type="text">
+									</div>
+									<div class="input-field col m2 s6">
+										<label for="projstart-1">Дата начала:</label>
+										<input type="text" class="datepicker2" id="projstart-1">
+									</div>
+									<div class="input-field col m2 s6">
+										<label for="projfinish-1">Дата окончания:</label>
+										<input type="text" class="datepicker2" id="projfinish-1">
+									</div>
+									<div class="input-field col m4 s6">
+										<label for="projresult">Итог</label>
+										<input id="projresult" type="text">
+									</div>
+								</div>
+							</div>
+
+							<a class="btn-floating waves-effect waves-light" onclick="addChild()"><i class="material-icons">add</i></a>
+						</div>
+						<!-- Конец контента модуля -->
+
+						<div class="modal-footer">
+							<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Принять</a>
+						</div>
+					</div>
+					<!--Конец таблицы-->
+
+
+					<div class="input-field col s12">
+						<label for="projprom">Продвижение проекта</label>
+						<textarea id="projprom" class="materialize-textarea tooltipped" data-position="bottom" data-delay="50" data-tooltip="Опишите, с помощью каких каналов коммуникации вы планируете добраться до вашей целевой аудитории"></textarea>
+					</div>
+					<div class="input-field col s12">
+						<label for="projteam">Команда проекта</label>
+						<textarea id="projteam" class="materialize-textarea tooltipped" data-position="bottom" data-delay="50" data-tooltip="1. Исполнители (существующие и планируемые) 2. Их квалификация 3.  Роль в проекте"></textarea>
+					</div>
+					<div class="input-field col s12">
+						<label for="projpartner">Партнеры проекта</label>
+						<textarea id="projpartner" class="materialize-textarea tooltipped" data-position="bottom" data-delay="50" data-tooltip="1. Существующие партнеры, инвесторы проекта 2. Те, кого вы планируете привлечь к реализации проекта, в том числе гос. структуры"></textarea>
+					</div>
+					<div class="input-field col s12">
+						<label for="projcost">Структура расходов</label>
+						<textarea id="projcost" class="materialize-textarea tooltipped" data-position="bottom" data-delay="50" data-tooltip="Переменные и постоянные расходы в вашем проекте"></textarea>
+					</div>
+					<div class="input-field col s12">
+						<label for="projmodel">Модель монетизации</label>
+						<textarea id="projmodel" class="materialize-textarea tooltipped" data-position="bottom" data-delay="50" data-tooltip="1. Каким образом вы планируете зарабатывать в вашем бизнес-проекте 2. Какой срок окупаемости инвестиций"></textarea>
+					</div>
+					<div class="input-field col s12">
+						<label for="projoutput">Результаты проекта</label>
+						<textarea id="projoutput" class="materialize-textarea tooltipped" data-position="bottom" data-delay="50" data-tooltip="Какие изменения произойдут по итогам реализации проекта, какие результаты будут достигнуты"></textarea>
+					</div>
+					<div class="input-field col s12">
+						<label for="projeffect">Оценка эффективности проекта</label>
+						<textarea id="projeffect" class="materialize-textarea tooltipped" data-position="bottom" data-delay="50" data-tooltip="1. Методы оценки эффективности проекта 2. Ключевые показатели эффективности (ключевые метрики)"></textarea>
+					</div>
+					<div class="input-field col s12">
+						<label for="projstability">Устойчивость проекта</label>
+						<textarea id="projstability" class="materialize-textarea tooltipped" data-position="bottom" data-delay="50" data-tooltip="Стадии развития  (жизненные циклы) проекта, их продолжительность во времени(3–5 лет)"></textarea>
+					</div>
+					<h5>Бюджет проекта</h5>
+					<div class="input-field col s12">
+						<label for="projbudget">Общий бюджет на запуск проекта</label>
+						<input type="text" id="projbudget" placeholder="(руб.)">
+					</div>
+					<div class="input-field col s12">
+						<label for="projdonor">Объем запрашиваемых у донора средств</label>
+						<input type="text" id="projdonor" placeholder="(руб.)">
+					</div>
+					<div class="input-field col s12">
+						<label for="projinvest">Имеющиеся инвестиции на данный момент</label>
+						<input type="text" id="projinvest" placeholder="(руб.)">
+					</div>
+					<div class="input-field col s12">
+						<label for="projyear">Оборот за год</label>
+						<input type="text" id="projyear" placeholder="(руб.)">
+					</div>
+
+					<button class="btn waves-effect waves-light modal-trigger" type="submit" name="action" id="send" href="#modal2">
+								<i class="material-icons right">input</i>Отправить
+							</button>
+					<!--					 Modal Trigger 
+					<a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>-->
+
+					<!-- Modal Structure -->
+					<div id="modal2" class="modal">
+						<div class="modal-content">
+							<h4>Спасибо за регистрацию!</h4>
+							<p>Ваша заявка на стипендию Govermedia plus принята. В ближайшее время мы с вами свяжемся.</p>
+						</div>
+						<div class="modal-footer">
+							<a href="" class="modal-action modal-close waves-effect waves-green btn-flat">Принять</a>
+						</div>
+					</div>
+
+
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<!--Import jQuery before materialize.js-->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.maskedinput.js"></script>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+</body>
+
+</html>
